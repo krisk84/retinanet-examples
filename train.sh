@@ -3,6 +3,10 @@
 pip install --no-cache-dir .
 pip install tensorboardX
 
+if [ ! -f "retinanet_rn34fpn.pth" ]; then
+  ./get_pretrained.sh
+fi
+
 # Default to batch 30 for two Nvidia 1080 Tis
 if [ "$1" ]; then
   BATCH="$1"
