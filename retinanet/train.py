@@ -1,7 +1,7 @@
 from statistics import mean
 from math import isfinite 
 import torch
-from torch.optim import SGD
+from torch.optim import Adam
 from torch.optim.lr_scheduler import LambdaLR
 from torch.utils.data import DataLoader
 from apex import amp, optimizers
@@ -25,7 +25,7 @@ def train(model, state, path, annotations, val_path, val_annotations, resize, ma
         model = model.cuda()
 
     # Setup optimizer and schedule
-    optimizer = SGD(model.parameters(), lr=lr, weight_decay=0.0001, momentum=0.9) 
+    optimizer = Adam(model.parameters(), lr=lr, weight_decay=0.0004, amsgrad=True)
 
     model, optimizer = amp.initialize(model, optimizer,
                                       opt_level = 'O2' if mixed_precision else 'O0',
