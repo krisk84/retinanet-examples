@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Nasty hack because pip list and pipes are busted
-if [ ! -r pip_deps_installed ]; then
+if [ ! -r /pip_deps_installed ]; then
   pip install --no-cache-dir .
   pip install tensorboardX
-  touch pip_deps_installed
+  touch /pip_deps_installed
 fi
 
 if [ ! -r retinanet_rn34fpn.pth ]; then
