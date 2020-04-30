@@ -7,6 +7,7 @@ if [ ! -r /pip_deps_installed ]; then
   touch /pip_deps_installed
 fi
 
+# FYI - backup URL at https://redactionapp.blob.core.windows.net/openimages/retinanet_rn34fpn.zip
 if [ ! -r retinanet_rn34fpn.pth ]; then
   wget https://github.com/NVIDIA/retinanet-examples/releases/download/19.04/retinanet_rn34fpn.zip
   unzip -j retinanet_rn34fpn.zip
