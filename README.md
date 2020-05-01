@@ -1,5 +1,7 @@
 # RetinaNet Examples
 
+For quickstart with the Real-time Redaction App on Jetson devices see the [wiki](https://github.com/krisk84/retinanet-examples/wiki).
+
 **Fast** and **accurate** single stage object detection with end-to-end GPU optimization.
 
 ## Description
